@@ -76,3 +76,9 @@ data/PLIP_TXT/
 .env
 .env.local
 config.local.py
+
+# çalışma dosyaları
+qwen_hata.txt
+qwen_pyompt.txt
+gemini_prompt.txt
+README_orj.md
