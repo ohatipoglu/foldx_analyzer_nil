@@ -1,0 +1,9 @@
+C:\ProgramData\anaconda3\envs\foldx_analysis\python.exe C:\Projects\PycharmProjects\FoldX_Project_Nil\main.py 
+Traceback (most recent call last):
+  File "C:\Projects\PycharmProjects\FoldX_Project_Nil\main.py", line 25, in <module>
+    from ui.main_window import MainWindow
+  File "C:\Projects\PycharmProjects\FoldX_Project_Nil\ui\main_window.py", line 20, in <module>
+    from ..core.parser import FoldXParser, FoldXParserError
+ImportError: attempted relative import beyond top-level package
+
+Process finished with exit code 1

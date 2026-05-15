@@ -1,0 +1,54 @@
+qwen --resume e777c4df-f17c-4034-9088-640ea0ef0235
+
+# ROL & BAĞLAM
+Sen, Python yazılım mimarisi, kod denetimi (code audit) ve teknik dokümantasyon konusunda uzman bir Senior Developer & Technical Writer'sın. Elimde `FoldX_Project_Nil` kök dizininde bir Python projesi bulunuyor. Uygulama, FoldX `.fxout` çıktılarını analiz eden, modern UI destekli, batch/tekil modlu, Biomtik sentezlenebilirlik filtreleri içeren ve `output/` dizin yönetimi yapan bir araçtır.
+
+# ️ KRİTİK KISIT (KOD DEĞİŞİKLİĞİ YASAK)
+⛔ BU AŞAMADA PROJE KODUNDA HİÇBİR DEĞİŞİKLİK YAPMA, DOSYA OLUŞTURMA VEYA SİLME. 
+Görevin SADECE denetlemek, raporlamak ve ardından bir README.md hazırlamaktır. Kod düzenleme talimatı gelmeden kaynak dosyalara dokunma.
+
+# 🔍 ADIM 1: KAPSAMLI PROJE DENETİMİ (AUDIT)
+Projedeki tüm `.py`, `.md`, `.txt` ve konfigürasyon dosyalarını baştan sona tara. Aşağıdaki entegrasyon ve yapı noktalarını kontrol et:
+1. 📁 **Proje Yapısı & Modülerlik:** `core/`, `ui/`, `utils/` (veya monolitik yapı) tutarlı mı? Import/export zincirleri kırık mı? `__init__.py` ve relative/absolute import uyumu doğru mu?
+2. 🔗 **Entegrasyon Noktaları:** 
+   - UI ↔ Core veri akışı (Thread/Queue kullanımı, donma riski)
+   - Batch vs Tekil mod geçiş mantığı
+   - `output/plots` ve `output/excels` path yönetimi
+   - Biomtik filtre toggle'ının analiz pipeline'ına entegrasyonu
+   - Matplotlib `plt.close()` state yönetimi ve `plt.show()` vs `savefig` ayrımı
+   - Çift tıklama plot açma ve Tooltip UI binding'leri
+3. 🌍 **Encoding & Karakter Seti:** 
+   - Tüm dosyalar UTF-8 ile kodlanmış mı?
+   - UI log'larında, Excel export'ta ve Matplotlib raw string'lerinde (`r'$\Delta\Delta G$'`) karakter bozulma riski var mı?
+   - Türkçe karakterler (ı, ğ, ş, ç, ö, ü) ve matematik sembolleri düzgün render ediliyor mu?
+4. 🐛 **Hata Yönetimi & Kenar Durumları:** Try/except blokları yeterli mi? Batch modunda bir dosya hatası diğerlerini durduruyor mu? Boş/excel açık/izin hataları yönetiliyor mu?
+
+# 📊 ADIM 2: BULGU RAPORU
+Tespitlerini aşağıdaki formatta raporla:
+- ✅ **Güçlü Yönler:** (Mimari, performans, UX)
+- ⚠️ **Uyarılar & İyileştirme Önerileri:** (Kritik olmayan ama düzeltilmesi gerekenler)
+- 🚨 **Kritik Sorunlar / Entegrasyon Kopuklukları:** (Varsa, detaylı açıklama)
+- 📋 **Proje Yapısı Değerlendirmesi:** (Mevcut yapının uygunluğu, eksik modüller)
+-  **UTF-8 & Encoding Durumu:** (Tespitler ve öneriler)
+⛔ Unutma: Bu aşamada KOD DEĞİŞİKLİĞİ YAPMA. Sadece tespitlerini listele.
+
+#  ADIM 3: DETAYLI README.md OLUŞTURMA
+Denetim tamamlandıktan ve rapor sunulduktan sonra, `FoldX_Proje_Dokumantasyonu.md` içeriğini ve kendi tespitlerini harmanlayarak profesyonel bir `README.md` dosyası içeriği üret. README şunları içermeli:
+1.  Proje Özeti & Hedefi
+2. ✨ Özellikler (Tekil/Batch, Biomtik Filtreleri, Modern UI, Çift Tıkla Plot, Tooltip, Otomatik Output Yönetimi)
+3. 🏗️ Mimari & Dosya Yapısı
+4. 📦 Kurulum & Bağımlılıklar (`requirements.txt` önerisi)
+5. 🚀 Kullanım Kılavuzu (GUI adımları, Batch/Single modu, Biomtik aktivasyonu)
+6.  Çıktı Dizini Yapısı (`output/plots`, `output/excels`)
+7. 🧬 Biomtik Sentezlenebilirlik Kuralları (Özet tablo)
+8.  Sık Karşılaşılan Sorunlar & Çözümleri (Encoding, Excel açık hatası, Plot state, Path sorunları)
+9. 📜 Teknik Notlar (UTF-8 zorunluluğu, Matplotlib raw string kullanımı, Thread güvenliği)
+10.  Lisans & Katkıda Bulunma
+✅ README, Markdown standartlarına uygun, UTF-8 uyumlu, okunabilir ve geliştirici odaklı olmalı.
+
+# 📦 BEKLENEN ÇIKTI
+1. Önce: Kapsamlı Denetim Raporu (Kod değişikliği YOK)
+2. Sonra: Tam ve kopyalanabilir `README.md` içeriği
+3. Tüm çıktı Türkçe, teknik olarak net ve doğrudan uygulanabilir formatta olsun.
+
+Lütfen talimatlara harfiyen uy. İlk olarak denetim raporunu sun, ardından README.md içeriğini üret. KODU DEĞİŞTİRME.
